@@ -14,7 +14,7 @@ Understanding the fundamentals of web development is crucial for every JavaScrip
 
 * An HTTP response contains a **status code** indicating the result of the request: 200 for success, 404 for a resource not found, etc.
 
-* Web resources are uniquely addressed by their **URL** (Uniform resource locator). An URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
+* Web resources are uniquely addressed by their **URL** (Uniform resource locator). A URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
 
 * In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Asynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
 
@@ -46,7 +46,7 @@ Data exchanges on the Web follow a **request/response** paradigm.
 
 ![A web exchange example](images/chapter20-01.png)
 
-1. Th exchange is started by the client, which sends a **request** to the server to access a particular web resource.
+1. The exchange is started by the client, which sends a **request** to the server to access a particular web resource.
 1. The server prepares a result for the request.
 1. The server send backs this result to the client.
 
@@ -124,7 +124,7 @@ Family | Meaning | Examples
 
 > For a more in-depth presentation of the HTTP protocol, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 
-### Addressing a resource with an URL
+### Addressing a resource with a URL
 
 Web sites are usually accessed using their address, a piece of text of the form `http://www.mywebsite.com/myresourcepath/myresource`. This address can be split into several subparts
 
@@ -132,7 +132,7 @@ Web sites are usually accessed using their address, a piece of text of the form 
 * `www.mywebsite.com` is the **domain name** of the web site.
 * `/myresourcepath/myresource` is the **path** of the requested resource.
 
-An address like this one is called an URL, or **Uniform Resource Locator**. An URL uniquely describes a web resource and the way to request it.
+An address like this one is called a URL, or **Uniform Resource Locator**. A URL uniquely describes a web resource and the way to request it.
 
 ## From web sites to web apps
 
@@ -146,7 +146,7 @@ Another web development model aims to avoid transmitting a whole new page for ea
 * HTTP requests are sent to the server without interrupting the navigation on the page.
 * Only the needed portions of the page are updated with the requests' results.
 
-Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and an user experience nearly on par with native applications.
+Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and a user experience nearly on par with native applications.
 
 The set of technologies enabling the creation of web applications is codenamed **AJAX** (*Asynchronous JavaScript and XML*). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 

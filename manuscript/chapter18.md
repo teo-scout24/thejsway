@@ -17,7 +17,7 @@ This chapter will get you started with JavaScript for animations! We'll see how 
 Let's get started with animations by learning how to repeatedly modify an element's content. Here is the associated HTML code.
 
 ```html
-<h1 id="title">This page will self-destruct in <span`id="counter">10</span> second(s)...</h1>
+<h1 id="title">This page will self-destruct in <span id="counter">10</span> second(s)...</h1>
 ```
 
 And now for the corresponding JavaScript code.
@@ -45,7 +45,7 @@ How did the previous example work? The JavaScript code defines a function called
 
 > Calling `Number()` in the function code is mandatory: it converts the counter string into a number, which endows it with subtraction functionality.
 
-The call to `setInterval()` triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can bu used to further modify it.
+The call to `setInterval()` triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can be used to further modify it.
 
 ```js
 // Set up a repeated action
@@ -54,7 +54,7 @@ const intervalId = setInterval(callbackFunction, timeBetweenEachCall);
 
 ### Stop a repeated action
 
-Let's try to stop the counter once the countdown is complete. We'll also modify the text of the page. Here's the JavaScript code for our example, updated to produce our desired result.
+Let's try to stop the counter once the countdown is complete. We'll also modify the text of the page. Here's the JavaScript code for our example, updated to produce our desired result:
 
 ```js
 // Count down the counter until 0
@@ -108,11 +108,11 @@ const decreaseCounter = () => {
     // Cancel the repeated execution
     clearInterval(intervalId);
     // Modify the page title
-    const title = document.getElementById("title");
-    title.textContent = "BOOM!!";
+    const titleElement = document.getElementById("title");
+    titleElement.textContent = "BOOM!!";
     // Modify the title after 2 seconds
     setTimeout(() => {
-      title.textContent = "Everything's broken now :(";
+      titleElement.textContent = "Everything's broken now :(";
     }, 2000);
   }
 };
@@ -125,7 +125,7 @@ const intervalId = setInterval(decreaseCounter, 1000);
 
 [Click here](https://codepen.io/bpesquet/pen/ybYPbb?editors=1010) to see it in action.
 
-Once the countdown has finished, we call the `setTimeout()` function to set a new page title after a 2 second (2000 milliseconds) delay.
+Once the countdown has finished, we call the `setTimeout()` function to set a new page title after a 2 second (2000 millisecond) delay.
 
 The `setTimeout()` function lets you execute a function once after a particular delay, expressed in milliseconds.
 
@@ -136,7 +136,7 @@ setTimeout(callbackFunction, timeBeforeCall);
 
 ## Animate page elements
 
-The previous solutions were convenient for making our pages a bit more dynamic, but weren't enough for adding real-time animations. Let's look at a better-performing solution.
+The previous solutions were convenient for making our pages a bit more dynamic, but weren't enough for adding real-time animation. Let's look at a better-performing solution.
 
 Take, for example, the movement of a `<div>` type element from left to right on the page. We start with the following HTML and CSS code that display a red block on the page.
 
@@ -167,14 +167,13 @@ And here is the JavaScript code that lets you move the red block.
 // Move the block to the left
 const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
-  const xBlock = parseFloat(getComputedStyle(block).left);
+  const xBlock = parseFloat(getComputedStyle(blockElement).left);
   // Move the block to the right
-  block.style.left = (xBlock + movement) + "px";
+  blockElement.style.left = (xBlock + movement) + "px";
   // Have the browser call moveBlock as soon as possible
   requestAnimationFrame(moveBlock);
 };
 
-const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
 
 // Movement value in pixels
@@ -186,11 +185,11 @@ requestAnimationFrame(moveBlock);
 
 [Click here](https://codepen.io/bpesquet/pen/RVWxbW) to see it in action.
 
-After page load, the red block moves (indefinitely) from left to right.
+Upon page load, the red block moves (indefinitely) from left to right.
 
 ### Start an animation
 
-The example code defines a function called `moveBlock()` which moves the block horizontally to the right. It grabs the current position of the block's left border than adds the value contained in the `movement` variable. Next, it calls the `requestAnimationFrame()` method to keep the animation going.
+The example code defines a function called `moveBlock()` which moves the block horizontally to the right. It grabs the current position of the block's left border than adds the value contained in the `movement` variable. Next, the code calls the `requestAnimationFrame()` method to keep the animation going.
 
 Position values are written in pixels. These are the strings you saw that resemble "XXpx," which requires the use of the JavaScript `parseFloat()` function to convert numeric values before making calculations.
 
@@ -222,13 +221,13 @@ Here's the updated JavaScript code.
 // Move the block to the right, all the way to the end of the frame
 const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
-  const xBlock = parseFloat(getComputedStyle(block).left);
+  const xBlock = parseFloat(getComputedStyle(blockElement).left);
   // Convert the width of the frame (value of the form "XXpx") to a number
   const xMax = parseFloat(getComputedStyle(frame).width);
   // If the block isn't already to the end of the frame
   if (xBlock + blockWidth <= xMax) {
     // Block movement
-    block.style.left = (xBlock + movement) + "px";
+    blockElement.style.left = (xBlock + movement) + "px";
     animationId = requestAnimationFrame(moveBlock);
   }
   else {
@@ -237,7 +236,6 @@ const moveBlock = () => {
   }
 };
 
-const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
 // Convert the block width (value of the form "XXpx") to a number
 const blockWidth = parseFloat(getComputedStyle(block).width);
@@ -314,7 +312,7 @@ Here's how you might want to approach your decision:
 
 ### Chronometer
 
-Write a interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
+Write an interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
 
 ### Bouncing ball
 
@@ -345,4 +343,4 @@ Write the JavaScript code that makes the ball bounce horizontally.
 
 ![Execution result](images/chapter18-04.png)
 
-T> Create a variable with values 1 or -1 to know in which direction the ball should move.
+With your solution, create a variable with values 1 or -1 that dictates the direction in which the ball should move.

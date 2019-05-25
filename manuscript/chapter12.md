@@ -1,6 +1,6 @@
 # What's a web page?
 
-This short chapter summarizes what you need to known about the Web and web pages.
+This short chapter summarizes what you need to know about the Web and web pages.
 
 ## TL;DR
 
@@ -75,6 +75,7 @@ Here is an example of a simple web page, usually stored as an `.html` file.
 
 Here are a few references for learning more about HTML:
 
+* [Interneting is Hard - A friendly web development tutorial for complete beginners](https://internetingishard.com/html-and-css/)
 * [Khan Academy - Intro to HTML](https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html)
 * [Mozilla Developer Network - HTML reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
 

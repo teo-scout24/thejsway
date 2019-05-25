@@ -46,7 +46,7 @@ JavaScript lets you write code inside a **loop** that executes repeatedly until 
 
 ## The `while` loop
 
-A `while` look lets you repeat code while a certain condition is true.
+A `while` loop lets you repeat code while a certain condition is true.
 
 ### Example
 
@@ -208,7 +208,7 @@ console.log(19 % 3); // 1 because 19 = 3 * 6 + 1
 console.log(20 % 3); // 2 because 20 = 3 * 6 + 2
 ```
 
-Improve the program so that it also shows odd numbers. Improve it again so that the initial number is given by the user.
+Improve the program so that it also shows odd numbers. Improve it again to replace the initial number `1` by a number given by the user.
 
 > This program must show exactly 10 numbers including the first one, not 11 numbers!
 
@@ -226,7 +226,7 @@ When you are done, improve the program so it only accepts numbers between 2 and 
 
 ### Neither yes nor no
 
-Write a program that plays "neither yes, nor no" with the user; specifically, the user enters text until she types "yes" or "no", ending the game.
+Write a program that plays "neither yes, nor no" with the user. Specifically, the programs asks the user to enter text until either "yes" or "no" is typed, which ends the game.
 
 ### FizzBuzz
 

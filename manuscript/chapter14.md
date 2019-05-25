@@ -6,7 +6,7 @@ In this chapter, you'll see how to use JavaScript to traverse the DOM.
 
 * Rather than go through the DOM node by node, you can quickly access one or more elements using **selection methods**.
 
-* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, which can further be converted to an array with `Array.from()`. The latter method returns a single item. 
+* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, which can further be converted to an array with `Array.from()`. The latter method returns a single item.
 
 * The `querySelectorAll()` and `querySelector()` methods make it possible to search for items using a **CSS selector**. The first method returns all matching items, and the second returns only the first.
 
@@ -80,7 +80,7 @@ With the `getElementsByTagName()` method, selecting the first `h2` element becom
 const titleElements = document.getElementsByTagName("h2");
 
 console.log(titleElements[0]);     // Show the first h2
-console.log(titleElements.length); // 2 (total number of h2 elements in the page)
+console.log(titleElements.length); // 3 (total number of h2 elements in the page)
 ```
 
 ![Execution result](images/chapter14-07.png)
@@ -93,7 +93,7 @@ DOM elements also feature a method called `getElementsByClassName()`. This metho
 
 It's important to note that `NodeList` objects are *not* real JavaScript arrays, so not all array operations are applicable to them. To turn a `NodeList` object into an array, use the `Array.from()` method.
 
-To select and display all document elements with a class `"wonders"`, you can write the following code.
+To select and display all document elements with a class `"exists"`, you can write the following code.
 
 ```js
 // Show all elements that have the class "exists"
@@ -107,7 +107,7 @@ existingElements.forEach(element => {
 
 ### Selecting an item according to its ID
 
-Lastly, each element of the DOM provides a method called `getElementById()` that returns among all sub-elements with the ID passed as a parameter. It returns `null` if no associated element can be found.
+Lastly, the `document` variable provides a method called `getElementById()` that returns the element with the specified ID among all elements of the document. It returns `null` if no associated element can be found.
 
 The following code selects and displays the list with ID `"new"`.
 
@@ -182,7 +182,7 @@ The DOM also provides information on the items you've just selected.
 
 ### HTML content
 
-The `innerHTML` property will retrieve the HTML contents of your DOM element.
+The `innerHTML` property will retrieve the HTML content of your DOM element.
 
 ```js
 // The HTML content of the DOM element with ID "content"

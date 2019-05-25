@@ -49,7 +49,7 @@ const myObject = Object.create(myPrototypeObject);
 
 ## Context: a multiplayer RPG
 
-As a reminder, here's the code for our minimalist RPG taken from a previous chapter. it creates an object literal named `aurora` with three properties (`name`, `health` and `strength`) and a `describe()` method.
+As a reminder, here's the code for our minimalist RPG taken from a previous chapter. It creates an object literal named `aurora` with four properties (`name`, `health`, `strength` and `xp`) and a `describe()` method.
 
 ```js
 const aurora = {
@@ -66,13 +66,13 @@ const aurora = {
 };
 
 // Aurora is harmed by an arrow
-aurora.health = aurora.health - 20;
+aurora.health -= 20;
 
 // Aurora gains a strength necklace
-aurora.strength = aurora.strength + 10;
+aurora.strength += 10;
 
 // Aurora learns a new skill
-aurora.xp = aurora.xp + 15;
+aurora.xp += 15;
 
 console.log(aurora.describe());
 ```
@@ -82,7 +82,7 @@ To make the game more interesting, we'd like to have more characters in it. So h
 ```js
 const glacius = {
   name: "Glacius",
-  health: 139,
+  health: 130,
   strength: 30,
   xp: 0,
 
@@ -126,9 +126,9 @@ class Character {
 
 This example demonstrates several key facts about JavaScript classes:
 
-* A class is created with the `class` keyword, followed by the name of the class (usually starting with a uppercase letter).
+* A class is created with the `class` keyword, followed by the name of the class (usually starting with an uppercase letter).
 * Contrary to object literals, there is no separating punctuation between the elements inside a class.
-* A class can only contains **methods**, not data properties.
+* A class can only contain **methods**, not data properties.
 * Just like with object literals, the `this` keyword is automatically set by JavaScript inside a method and represents **the object on which the method was called**.
 * A special method named `constructor()` can be added to a class definition. It is called during object creation and is often used to give it data properties.
 
@@ -141,13 +141,13 @@ const aurora = new Character("Aurora", 150, 25);
 const glacius = new Character("Glacius", 130, 30);
 
 // Aurora is harmed by an arrow
-aurora.health = aurora.health - 20;
+aurora.health -= 20;
 
 // Aurora gains a strength necklace
-aurora.strength = aurora.strength + 10;
+aurora.strength += 10;
 
 // Aurora learns a new skill
-aurora.xp = aurora.xp + 15;
+aurora.xp += 15;
 
 console.log(aurora.describe());
 console.log(glacius.describe());
@@ -236,7 +236,7 @@ This type of relationship between JavaScript objects is called **delegation**: a
 
 ### The true nature of JavaScript classes
 
-In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
+In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When an object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
 JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, a class is itself an object, not a static blueprint. "Instantiating" a class creates a new object linked to a prototype object. Regarding classes behavior, the JavaScript language is quite different from C++, Java or C#, but close to other object-oriented languages like Python, Ruby and Smalltalk.
 

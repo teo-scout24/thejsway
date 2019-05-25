@@ -12,11 +12,11 @@ To make a web page interactive, you have to respond to user actions. Let's disco
 
 * `click`, `mousedown` and `mouseup` events let you react to mouse-related events.
 
-* Page loading and closing are associated with the events `load` and `beforeunload` respectively.
+* Page loading and closing are associated with the events `load` and `beforeunload`, respectively.
 
-* An event propagates within the DOM tree from its node of origin until the document root. This propagation can be interrupted with the `stopPropagation()` method.
+* An event propagates within the DOM tree from its node of origin up to the document root. This propagation can be interrupted with the `stopPropagation()` method.
 
-* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated to the action that triggered the event.
+* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated with the action that triggered the event.
 
 ## Introduction to events
 
@@ -24,7 +24,7 @@ Up until now, your JavaScript code was executed right from the start. The execut
 
 To add more interactivity, the page should react to the user's actions: clicking on a button, filling a form, etc. In that case, the execution order of statements is not determined in advance anymore, but depends on the user behavior. His actions trigger **events** that can be handled by writing JavaScript code.
 
-This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with an user.
+This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with a user.
 
 ### A first example
 
@@ -66,7 +66,7 @@ document.getElementById("myButton").addEventListener("click", () => {
 
 ### Removing an event listener
 
-In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, massing as a parameter the function which used to handle the event.
+In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, passing as a parameter the function which used to handle the event.
 
 > This can only work if the handler function is not anonymous.
 
@@ -77,7 +77,7 @@ buttonElement.removeEventListener("click", showMessage);
 
 ## The event family
 
-Manay types of events can be triggered by DOM elements. Here are the main event categories.
+Many types of events can be triggered by DOM elements. Here are the main event categories.
 
 | Category | Examples |
 |---|---|
@@ -90,7 +90,7 @@ Every event is associated to an `Event` object which has both **properties** (in
 
 Many properties of the `Event` object associated to an event depend on the event type. Some properties are always present, like `type` that returns the event type and `target` that return the event target (the DOM element that is the event source).
 
-The `Event` object is passed as a parameter to the handler function. The following code uses it to show the event type and target in the console.
+The `Event` object is passed as a parameter to the handler function. The following code uses this object to show the event type and target in the console.
 
 ```js
 // Show event type and target when the user clicks on the button
@@ -99,7 +99,7 @@ document.getElementById("myButton").addEventListener("click", e => {
 });
 ```
 
-> The parameter name chosen for the `Event` object is generaly `e` or `event`.
+> The parameter name chosen for the `Event` object is generally `e` or `event`.
 
 ![Execution result](images/chapter16-02.png)
 
@@ -196,7 +196,7 @@ The appearance order for mouse-related events is: `mousedown` -> `mouseup` -> `c
 
 ### Page loading
 
-Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represent the brower window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
+Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represents the browser window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
 
 The following code displays a message in the console once the page is fully loaded.
 
@@ -305,7 +305,7 @@ Start with the following HTML content.
 <button id="deactivate">Désactivate counting</button>
 ```
 
-Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stop the counting.
+Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stops the counting.
 
 ### Changing colors
 
@@ -324,7 +324,7 @@ Here is some HTML content to start with.
 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida.</div>
 ```
 
-Write the associated JavaScript code that update background color of all `div` tags according to the key (R, Y, G or B) pressed by the user.
+Write the associated JavaScript code that updates the background color of all `div` tags according to the key (R, Y, G or B) pressed by the user.
 
 ![Execution result](images/chapter16-11.png)
 
@@ -365,7 +365,7 @@ const questions = [
     answer: "2+2 = 4"
   },
   {
-    statement: "In what year did Christopher Columbus discover America?",
+    statement: "In which year did Christopher Columbus discover America?",
     answer: "1492"
   },
   {
